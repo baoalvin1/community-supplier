@@ -12,6 +12,7 @@ return(
       <img
         alt=""
         src={logo}
+        className="Ribbon"
         width="30"
         height="30"
       />{' '}

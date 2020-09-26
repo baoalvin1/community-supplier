@@ -31,12 +31,18 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.5);
+
+  }
+
+  100%{
+
+    transform: scale(1);
   }
 }
 
@@ -55,14 +61,14 @@ flex-direction: column;
 
 display: flex;
 width: 290px;
-height: 190px;
+height: 230px;
 flex-direction: column;
 border: 1px solid rgba(0, 0, 0, 0.2);
 border-radius: 4px;
 margin-left: 20px;
 cursor: pointer;
 padding-bottom:1vh ;
-overflow:hidden ;
+ overflow: auto;
 }
 
 
@@ -80,4 +86,9 @@ text-align: center;
   grid-template-columns: auto auto auto;
   padding-left: 7%;
   padding-right: 7%;
+}
+.Ribbon{
+
+
+animation: pulsate infinite 7s;
 }

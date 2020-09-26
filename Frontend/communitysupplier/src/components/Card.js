@@ -41,7 +41,7 @@ return(
 <span style={{fontStyle:"italic"}}>{this.props.address}</span>
       <span>{this.props.quantityAsked+" " +this.props.itemType}</span>
       </div>
-      <button style={{width:"7vh",margin:"auto",marginTop:"2vh",backgroundColor:"rgb(255, 128, 128)",borderColor:"rgb(255, 128, 128)",borderRadius:"0.25rem",whiteSpace:"nowrap",border:"1px solid transparent",padding:".375rem .75rem",lineHeight:"1.5",textAlign:"center"}} >Supply</button>
+      <button style={{width:"max-content",margin:"auto",marginTop:"2vh",backgroundColor:"rgb(255, 128, 128)",borderColor:"rgb(255, 128, 128)",borderRadius:"0.25rem",whiteSpace:"nowrap",border:"1px solid transparent",padding:".375rem .75rem",lineHeight:"1.5",textAlign:"center"}} >Supply</button>
       {file}
       
       
