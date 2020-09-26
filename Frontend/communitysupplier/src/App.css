@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.Navbar{
+font-family: "Segoe UI";
+background:#343a40;
+padding-top: 1.5vh;
+font-size: 2.5vh;
+font-weight: 500;
+padding-bottom: 1.5vh;
+display: flex;
+flex-direction: column;
+}
+
+.Card{
+
+display: flex;
+flex-direction: column;
+
+}
+
+
+img{
+  margin-left: auto;
+  margin-right: auto;
+
+text-align: center;
+
+}
