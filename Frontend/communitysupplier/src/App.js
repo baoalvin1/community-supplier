@@ -1,52 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Heading from "./components/Heading"
-import Card from "./components/Card"
-
-const requests=[
-
-  {
-  hospitalName:"Baptist Hospital",
-  itemType:"Ventilators",
-  quantityAsked:10,
-  address:"Kendall Drive",
-  hasFile:true
-  },
-  
-  {
-    hospitalName:"Miami Hospital",
-    itemType:"Inhalers",
-    quantityAsked: 40 ,
-    address:"109 SW",
-    hasFile:false
-    },
-    {
-      hospitalName:" Fake Hospital",
-      itemType:"Guns",
-      quantityAsked: 2 ,
-      address:"123 SW",
-      hasFile:true
-      },
-  
+import Dashboard from "./components/Dashboard"
+import Form from "./components/Form"
+import addimage from "./add.svg"
 
 
 
-]
+
+export default class App extends Component {
 
 
-function App() {
-  return (
-    <div className="App">
-    <Heading></Heading>
-    <div className="grid-container">
-      {requests.map((request)=>{
-        return(
-        <Card {...request} />
-        )
-      })}
-    </div>
-    </div>
-  );
+constructor(){
+  super()
+  this.state={requesting:false}
 }
 
-export default App;
+render(){
+
+const mainComponent= this.state.requesting==true ? <Form/> : <Dashboard/>
+
+
+
+
+  return (
+    <>
+    <div className="App">
+    <Heading></Heading>
+    </div>
+    <img style={{marginLeft:"10%"}} src={addimage} width="40vh" height="80vh" onClick />
+
+    {mainComponent}
+    
+    </>
+  );
+    }
+}
+

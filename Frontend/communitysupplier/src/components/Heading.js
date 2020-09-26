@@ -17,7 +17,7 @@ return(
         height="30"
       />{' '}
       
-      Community Helper
+      <span>Community Helper</span>
       
 </div>
 )
