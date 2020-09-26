@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .App {
   text-align: center;
+  font-family: 'Open Sans';
 }
 
 .App-logo {
@@ -51,15 +54,30 @@ flex-direction: column;
 .Card{
 
 display: flex;
+width: 290px;
+height: 190px;
 flex-direction: column;
-
+border: 1px solid rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+margin-left: 20px;
+cursor: pointer;
+padding-bottom:1vh ;
+overflow:hidden ;
 }
 
 
 img{
   margin-left: auto;
   margin-right: auto;
-
 text-align: center;
 
+
+}
+
+.grid-container {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: auto auto auto;
+  padding-left: 7%;
+  padding-right: 7%;
 }
