@@ -42,10 +42,10 @@ def root():
 def post():
     if request.method == "POST":
         try:
-            hospitalName = request.json['hospitalName']
-            itemType = request.json['itemType']
-            quantityAsked = request.json['quantityAsked']
-            address = request.json['address']
+            hospitalName = request.get_json()['hospitalName']
+            itemType = request.get_json()['itemType']
+            quantityAsked = request.get_json()['quantityAsked']
+            address = request.get_json()['address']
 
             collection.insert_one(
                 {
