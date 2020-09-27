@@ -1,11 +1,13 @@
 from flask import Flask, render_template
 from pymongo import MongoClient
-from flask_cors import CORS
+from datetime import date
 
 cluster = MongoClient("mongodb+srv://newuser:Shellhacks2020@cluster0.e2pi8.gcp.mongodb.net/CommunitySupplierDatabase?retryWrites=true&w=majority")
 db = cluster["CommunitySupplierDatabase"]
 collection = db["Requests"]
 
+today = date.today()
+d1 = today.strftime("%d/%m/%Y")
 
 """collection.insert_one(
     {
@@ -18,16 +20,15 @@ collection = db["Requests"]
     }
 )"""
 
-app = Flask(__name__)
-CORS(app) #enables 
+app = Flask(__name__, template_folder = "Frontend/communitysupplier/public")
 
 
-"""@app.route('/')
+@app.route('/')
 def root():
     # For the sake of example, use static information to inflate the template.
     # This will be replaced with real information in later steps.
 
-    return render_template('index.html')""" # pointless function now as rendering is no longer needed. 
+    return render_template('index.html')
 
 @app.route("/get", methods=["GET"])
 def get():
@@ -39,8 +40,7 @@ def get():
     return response
 
 @app.route("/post", methods=["POST"])
-@cross_origin()
-def post():
+def post_example():
     """POST in server"""
     return jsonify(message="POST request returned")
 
