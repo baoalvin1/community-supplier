@@ -112,3 +112,59 @@ animation: pulsate infinite 7s;
   100% {font-size: 1rem;}
   
   }
+
+
+  
+input{
+
+  margin-bottom: 40px;
+  height: 3vh;
+  width: 24vh;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  border-top: none;
+  border-left:none;
+  border-right:none;
+  border-width: 1px;
+  border-bottom-color: grey;
+  }
+  .email:focus,.password:focus{
+    outline: none;
+    background-image: none;
+    border-bottom-color: black;
+  
+  }
+  
+  
+  form{
+  
+    padding-top: 90px;
+    margin-top: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    
+  
+  }
+  
+  .submit{
+  
+  background-color: rgb(250,250,250);
+  border-radius: 1vh;
+  width: 10vh;
+  height: 3.5vh;
+  border-width: 1px;
+  margin-top: 4vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  
+  
+  }

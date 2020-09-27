@@ -3,7 +3,6 @@ import './App.css';
 import Heading from "./components/Heading"
 import Dashboard from "./components/Dashboard"
 import Form from "./components/Form"
-import addimage from "./add.svg"
 
 
 
@@ -16,9 +15,14 @@ constructor(){
   this.state={requesting:false}
 }
 
+setTrue(){
+  this.setState({requesting:true})}
+
+
+
 render(){
 
-const mainComponent= this.state.requesting==true ? <Form/> : <Dashboard/>
+const mainComponent= this.state.requesting==true ? <Form/> : <Dashboard set={()=>this.setState({requesting:true})}/>
 
 
 
@@ -28,8 +32,7 @@ const mainComponent= this.state.requesting==true ? <Form/> : <Dashboard/>
     <div className="App">
     <Heading></Heading>
     </div>
-    <img style={{marginLeft:"10%"}} src={addimage} width="40vh" height="80vh" onClick />
-
+   
     {mainComponent}
     
     </>

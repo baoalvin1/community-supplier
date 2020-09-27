@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from "./Card"
+import addimage from "../add.svg"
 
 const requests=[
 
@@ -38,6 +39,8 @@ export default class Dashboard extends Component{
 render(){
 return(
  <>   
+  <img style={{marginLeft:"10%",cursor:"pointer"}} src={addimage} width="40vh" height="80vh" onClick={this.props.set}/>
+
 <div className="grid-container">
   {requests.map((request)=>{
     return(
