@@ -59,10 +59,11 @@ export default class Dashboard extends Component{
 
 
 componentDidMount(){
-    const url=""
+    const url="https://communitysupplier.uc.r.appspot.com"
     const response = await fetch(url)
     const content =  await response.json();
     
+
 
 }
 
