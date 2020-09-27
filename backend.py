@@ -38,7 +38,6 @@ def get():
     return response
 
 @app.route("/post", methods=["POST"])
-@cross_origin()
 def post():
     """POST in server"""
     return jsonify(message="POST request returned")
