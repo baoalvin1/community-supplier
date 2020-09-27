@@ -28,7 +28,7 @@ def root():
     # This will be replaced with real information in later steps.
     return render_template('index.html')""" # pointless function now as rendering is no longer needed.
 
-@app.route("/get", methods=["GET"])
+@app.route("/", methods=["GET"])
 def get():
     """GET in server"""
     response = jsonify(message="Simple server is running")
@@ -37,7 +37,7 @@ def get():
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
-@app.route("/post", methods=["POST"])
+@app.route("/", methods=["POST"])
 def post():
     """POST in server"""
     return jsonify(message="POST request returned")
