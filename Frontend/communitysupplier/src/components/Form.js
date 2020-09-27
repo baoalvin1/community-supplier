@@ -29,6 +29,10 @@ const response =  await fetch(url,{method:'POST',headers: {
   },body: JSON.stringify(this.state)})
   const content=await response.json();
 
+  console.log(response)
+  console.log(content)
+this.props.set()
+
     }
 
 
