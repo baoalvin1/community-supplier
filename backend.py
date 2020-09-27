@@ -30,6 +30,20 @@ def root():
 
     return render_template('index.html')
 
+@app.route("/get", methods=["GET"])
+def get():
+    """GET in server"""
+    response = jsonify(message="Simple server is running")
+
+    # Enable Access-Control-Allow-Origin
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
+
+@app.route("/post", methods=["POST"])
+@cross_origin()
+def post():
+    """POST in server"""
+    return jsonify(message="POST request returned")
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
