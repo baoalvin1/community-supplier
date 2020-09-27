@@ -20,7 +20,7 @@ this.state={
 
 
 
-    submit(event){
+    async submit(event){
 const url =  "https://communitysupplier.uc.r.appspot.com/"
 event.preventDefault();
 const response =  await fetch(url,{method:'POST',headers: {
