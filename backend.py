@@ -38,7 +38,7 @@ def root():
 #     response.headers.add("Access-Control-Allow-Origin", "*")
 #     return response
 
-@app.route("/", methods=["GET, POST"])
+@app.route("/api", methods=["GET, POST"])
 def post():
     if request.method == "POST":
         try:
