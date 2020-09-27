@@ -28,38 +28,45 @@ def root():
     # This will be replaced with real information in later steps.
     return render_template('index.html')""" # pointless function now as rendering is no longer needed.
 
-@app.route("/", methods=["GET"])
-def get():
-    """GET in server"""
-    # x = collection.find()
-    response = jsonify(message="Simple server is running")
+# @app.route("/", methods=["GET, POST"])
+# def get():
+#     """GET in server"""
+#     # x = collection.find()
+#     response = jsonify(message="Simple server is running")
+#
+#     # Enable Access-Control-Allow-Origin
+#     response.headers.add("Access-Control-Allow-Origin", "*")
+#     return response
 
-    # Enable Access-Control-Allow-Origin
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    return response
-
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["GET, POST"])
 def post():
-    try:
-        hospitalName = request.form['hospitalName']
-        itemType = request.form['itemType']
-        quantityAsked = request.form['quantityAsked']
-        address = request.form['address']
+    if request.method == "POST":
+        try:
+            hospitalName = request.form['hospitalName']
+            itemType = request.form['itemType']
+            quantityAsked = request.form['quantityAsked']
+            address = request.form['address']
 
-        collection.insert_one(
-            {
-                "hospitalName":hospitalName,
-                "address":address,
-                "itemType":itemType,
-                "quantityAsked": quantityAsked
-            }
-        )
+            collection.insert_one(
+                {
+                    "hospitalName":hospitalName,
+                    "address":address,
+                    "itemType":itemType,
+                    "quantityAsked": quantityAsked
+                }
+            )
 
-    except Exception as ex:
-        template = "An exception of type {0} occurred. Arguments:\n{1!r}"
-        message = template.format(type(ex).__name__, ex.args)
-        return jsonify(message=message)
-    return jsonify(message="POST request returned")
+        except Exception as ex:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            message = template.format(type(ex).__name__, ex.args)
+            return jsonify(message=message)
+        return jsonify(message="POST request returned")
+    else:
+        response = jsonify(message="Simple server is running")
+
+        # Enable Access-Control-Allow-Origin
+        response.headers.add("Access-Control-Allow-Origin", "*")
+        return response
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
