@@ -31,8 +31,8 @@ def root():
 @app.route("/", methods=["GET"])
 def get():
     """GET in server"""
-    x = collection.find()
-    response = jsonify(x)
+    # x = collection.find()
+    response = jsonify(message="Simple server is running")
 
     # Enable Access-Control-Allow-Origin
     response.headers.add("Access-Control-Allow-Origin", "*")
