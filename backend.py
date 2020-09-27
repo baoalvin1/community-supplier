@@ -1,14 +1,11 @@
 from flask import Flask, render_template
 from pymongo import MongoClient
-from datetime import date
 from flask_cors import CORS
 
 cluster = MongoClient("mongodb+srv://newuser:Shellhacks2020@cluster0.e2pi8.gcp.mongodb.net/CommunitySupplierDatabase?retryWrites=true&w=majority")
 db = cluster["CommunitySupplierDatabase"]
 collection = db["Requests"]
 
-today = date.today()
-d1 = today.strftime("%d/%m/%Y")
 
 """collection.insert_one(
     {
