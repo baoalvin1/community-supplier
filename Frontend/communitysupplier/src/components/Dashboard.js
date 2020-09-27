@@ -11,7 +11,7 @@ async componentDidMount(){
     const url="https://communitysupplier.uc.r.appspot.com"
     const response = await fetch(url)
     const content =  await response.json();
-    this.setState({data:content})
+    this.setState({data:content.result})
 
 
 
@@ -25,7 +25,7 @@ return(
   <img style={{marginLeft:"10%",cursor:"pointer"}} src={addimage} width="40vh" height="80vh" onClick={this.props.set}/>
 
 <div className="grid-container">
-  {requests.map((request)=>{
+  {this.state.data.map((request)=>{
     return(
     <Card {...request} />
     )
