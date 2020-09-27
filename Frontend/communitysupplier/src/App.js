@@ -23,7 +23,7 @@ setTrue(){
 
 render(){
 
-const mainComponent= this.state.requesting==true ? <Form/> : <Dashboard set={()=>this.setState({requesting:true})}/>
+const mainComponent= this.state.requesting==true ? <Form set={()=>this.setState({requesting:false})} /> : <Dashboard set={()=>this.setState({requesting:true})}/>
 
 
 
