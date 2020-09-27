@@ -31,7 +31,8 @@ def root():
 @app.route("/", methods=["GET"])
 def get():
     """GET in server"""
-    response = jsonify(message="Simple server is running")
+    x = collection.find()
+    response = jsonify(x)
 
     # Enable Access-Control-Allow-Origin
     response.headers.add("Access-Control-Allow-Origin", "*")
@@ -40,10 +41,10 @@ def get():
 @app.route("/", methods=["POST"])
 def post():
     try:
-        hospitalName = request.form['hospitalName']
-        itemType = request.form['itemType']
-        quantityAsked = request.form['quantityAsked']
-        address = request.form['address']
+        hospitalName = request.json['hospitalName']
+        itemType = request.json['itemType']
+        quantityAsked = request.json['quantityAsked']
+        address = request.json['address']
 
         collection.insert_one(
             {
