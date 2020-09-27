@@ -41,10 +41,10 @@ def get():
 @app.route("/", methods=["POST"])
 def post():
     try:
-        hospitalName = request.json['hospitalName']
-        itemType = request.json['itemType']
-        quantityAsked = request.json['quantityAsked']
-        address = request.json['address']
+        hospitalName = request.form['hospitalName']
+        itemType = request.form['itemType']
+        quantityAsked = request.form['quantityAsked']
+        address = request.form['address']
 
         collection.insert_one(
             {
@@ -54,8 +54,11 @@ def post():
                 "quantityAsked": quantityAsked
             }
         )
-    except:
-        return jsonify(message="POST had an error")
+
+    except Exception as ex:
+        template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+        message = template.format(type(ex).__name__, ex.args)
+        return jsonify(message=message)
     return jsonify(message="POST request returned")
 
 if __name__ == '__main__':
