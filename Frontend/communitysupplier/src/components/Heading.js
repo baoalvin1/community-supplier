@@ -17,7 +17,7 @@ return(
         height="30"
       />{' '}
       
-      <span>Community Helper</span>
+      <span style={{color:"white"}} >Community Supplier</span>
       
 </div>
 )

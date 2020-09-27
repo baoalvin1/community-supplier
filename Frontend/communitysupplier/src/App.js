@@ -3,6 +3,7 @@ import './App.css';
 import Heading from "./components/Heading"
 import Dashboard from "./components/Dashboard"
 import Form from "./components/Form"
+import Tracking from "./components/Tracking"
 
 
 
@@ -32,6 +33,7 @@ const mainComponent= this.state.requesting==true ? <Form/> : <Dashboard set={()=
     <div className="App">
     <Heading></Heading>
     </div>
+    <Tracking/>
    
     {mainComponent}
     

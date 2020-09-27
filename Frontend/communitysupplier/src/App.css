@@ -3,6 +3,7 @@
 .App {
   text-align: center;
   font-family: 'Open Sans';
+  background: url("background.jpg")
 }
 
 .App-logo {
@@ -36,7 +37,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1.7);
 
   }
 
@@ -48,7 +49,7 @@
 
 .Navbar{
 font-family: "Segoe UI";
-background:#343a40;
+background:#61dafb;
 padding-top: 1.5vh;
 font-size: 2.5vh;
 font-weight: 500;
@@ -74,6 +75,8 @@ transition: 400ms;
  overflow: auto;
  animation-name: easein;
  animation-duration:600ms;
+ margin-bottom: 7vh;
+ background-color: white;
 }
 
 .Card:hover{
@@ -103,7 +106,7 @@ text-align: center;
 .Ribbon{
 
 
-animation: pulsate infinite 7s;
+animation: pulsate infinite 5s;
 }
 
 @keyframes easein{
@@ -167,4 +170,23 @@ input{
   flex-direction: column;
   
   
+  }
+
+  .headline{
+
+
+margin-left: 7vh;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+  .stat{
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 128, 128);
   }
