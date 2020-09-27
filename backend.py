@@ -39,7 +39,22 @@ def get():
 
 @app.route("/", methods=["POST"])
 def post():
-    """POST in server"""
+    try:
+        hospitalName = request.form['hospitalName']
+        itemType = request.form['itemType']
+        quantityAsked = request.form['quantityAsked']
+        address = request.form['address']
+
+        collection.insert_one(
+            {
+                "hospitalName":hospitalName,
+                "address":address,
+                "itemType":itemType,
+                "quantityAsked": quantityAsked
+            }
+        )
+    except:
+        return jsonify(message="POST had an error")
     return jsonify(message="POST request returned")
 
 if __name__ == '__main__':
