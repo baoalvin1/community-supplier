@@ -31,7 +31,7 @@ const Reqeuest = mongoose.model("Requests", SampleSchema);
 const app=express()
     
 app.use(cors())
-mongoose.connect("mongodb+srv://newuser:Shellhacks2020@cluster0.e2pi8.gcp.mongodb.net/CommunitySupplierDatabase?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://newuser:AskJacobForPassword@cluster0.e2pi8.gcp.mongodb.net/AskJacobForDatabaseName?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   connectTimeoutMS:2000
